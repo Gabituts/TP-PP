@@ -27,7 +27,7 @@ export class ItemsComponent implements OnInit{
         title: "naranja",
         price: 15,
         quantity: 2,
-        completed: false,
+        completed: true,
       }
     ];
   }

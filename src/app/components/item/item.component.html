@@ -1,18 +1,18 @@
-<div>
-    <div>
-        <input type="checkbox" [checked]="item.completed">
-        {{ item.title }}
+<li class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{disabled: item.completed}">
+    <input type="checkbox" [checked]="item.completed" (change)="onToggle(item)">
+    <div class="ms-2 me-auto">
+        <div class="fw-bold">{{ item.title }}</div>
     </div>
-    <div>
-        {{ item.price }}
+    <div class="mx-5">
+        {{ item.price | currency }}
     </div>
-    <div>
+    <div class="mx-5">
         {{ item.quantity }}
     </div>
-    <div>
-        {{ (item.price  * item.quantity) }}
+    <div class="mx-5">
+        {{ (item.price  * item.quantity) | currency}}
     </div>
-    <div>
-        <button class="btn">Borrar</button>
+    <div class="mx-5">
+        <button type="button" class="btn btn-primary" (click)="onDelete(item)">Borrar</button>
     </div>
-</div>
+</li>

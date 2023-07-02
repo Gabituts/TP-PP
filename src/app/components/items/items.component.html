@@ -1,5 +1,9 @@
-<div>
-    <app-item *ngFor="let item of items" [item]="item">
-    </app-item>
-
+<div class="container-sm">
+    <div class="list-group">
+        <app-item 
+            *ngFor="let item of items" 
+            [item]="item"
+            (deleteItem)="deleteItem($event)"></app-item>
+    </div>
 </div>
+

@@ -31,11 +31,15 @@ export class ItemsComponent implements OnInit{
         completed: true,
       }
     ];
-
   this.calTotal();
   }
+
   deleteItem(item: Item){
     this.items = this.items.filter(x => x.id !== item.id)
+    this.calTotal();
+  }
+
+  toggleItem(item: Item){
     this.calTotal();
   }
 
